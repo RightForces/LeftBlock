@@ -1,0 +1,65 @@
+{
+	"status" : true,
+	"message" : "Success",
+	"data" : [
+		
+		{
+			"name": "UOL",
+			"resume": "Uma das mais perigosas, tendenciosas e odiosas a direita (dona da folha de são paulo ainda)",
+			"links": [
+				{
+					"titulo": "Uso do nome orçamento secreto",
+					"link": "https://web.archive.org/web/20221107231623/https://revistaoeste.com/politica/eleicoes-2022/folha-muda-titulo-de-reportagem-e-apaga-orcamento-secreto/"
+				}
+			]
+		},
+
+		{
+			"name": "Globo",
+			"resume": "Extremamente tendenciosa, muito similar a UOL.",
+			"links": [
+				{
+					"titulo": "Ofendeu criança no 7 de setembro",
+					"link": "https://web.archive.org/web/20201123192628/https://www.poder360.com.br/midia/perfil-da-globo-no-facebook-ofende-menino-no-desfile-com-bolsonaro/"
+				}
+			]
+		},
+
+		{
+			"name": "Estadão",
+			"resume": "Tendenciosa, muito similar as outras.",
+			"links": [
+				{
+					"titulo": "Segue o papo das outras",
+					"link": "https://web.archive.org/web/20220831093105/https://politica.estadao.com.br/noticias/geral,gabinete-do-odio-esta-por-tras-da-divisao-da-familia-bolsonaro,70003017456"
+				}
+			]
+		},
+
+		{
+			"name": "Olhar digital",
+			"resume": "Tendenciosa, muito similar as outras.",
+			"links": [
+				{
+					"titulo": "Suposta censura...",
+					"link": "http://web.archive.org/save/https://olhardigital.com.br/2022/11/07/internet-e-redes-sociais/elon-musk-afirma-que-vai-investigar-suposta-censura-no-twitter-brasil/"
+				}
+			]
+		},
+
+		{
+			"name": "Paypal",
+			"resume": "Flertou perigosamente com a censura",
+			"links": [
+				{
+					"titulo": "Cobrar por Fakenews",
+					"link": "https://web.archive.org/web/20221009131450/https://livecoins.com.br/paypal-multa-2500-dolar-fake-news/"
+				}, {
+					"titulo": "Bloqueio de pagamento",
+					"link": "https://web.archive.org/web/20221015032915/https://www.estudosnacionais.com/27538/esquerda-consegue-bloquear-paypal-de-olavo-de-carvalho-e-busca-ainda-mais-censura/"
+				}
+			]
+		}
+
+	]
+}

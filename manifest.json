@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Right Forces Extension",
+  "version": "0.0.1",
+  "description": "Vamos priorizar mídias de direita e com tempo vamos expor fakenews da mídia e mais! #ForaLula",
+  "author": "Right Forces 2022",
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts; script-src 'self' 'https://apis.google.com/' 'https://www.gstatic.com/' 'https://*.firebaseio.com' 'https://www.googleapis.com' 'https://ajax.googleapis.com'; object-src 'self'"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        // Insert links here!
+        "https://*.uol.com.br/*",
+        "https://*.globo.com/*",
+        "https://*.estadao.com.br/*",
+        "https://*.paypal.com/*",
+        "https://*.olhardigital.com.br/*"
+        // End
+      ],
+      "js": [
+        "scripts/script.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [{
+      "resources": ["*"],"matches": ["<all_urls>"]
+  }]
+}

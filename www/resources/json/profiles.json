@@ -1,0 +1,140 @@
+{
+	"status" : true,
+	"message" : "Success",
+	"data" : [
+		
+		{
+			"profile": "Sleeping Zap",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/sleepingzap"
+				}
+			],
+			"details": "Iniciativa contra a esquerda"
+		},
+
+		{
+			"profile": "Joaquin Teixeira",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/JoaquinTeixeira"
+				}
+			],
+			"details": "Humor de direita"
+		},
+
+		{
+			"profile": "Nandx",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/nandx_rejected"
+				}
+			],
+			"details": "Humor de direita"
+		},
+
+		{
+			"profile": "FAlha de S.Paulo",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/foIha_sp"
+				}
+			],
+			"details": "Humor de direita"
+		},
+
+		{
+			"profile": "LOU",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/LOUnoticias"
+				}
+			],
+			"details": "Humor de direita"
+		},
+
+		{
+			"profile": "Paulo Figueiredo Filho",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/realpfigueiredo"
+				}
+			],
+			"details": "Jornalista honesto"
+		},
+
+		{
+			"profile": "Terra Brasil Notícias",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/TerraBrasilnot"
+				}
+			],
+			"details": "Jornal honesto"
+		},
+
+		{
+			"profile": "Lilo Vlog",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/LiloVLOG"
+				},
+				{
+					"social": "Youtube",
+					"link": "https://www.youtube.com/c/LiloVLOG"
+				}
+			],
+			"details": "Youtuber de direita (com shadow ban no youtube)"
+		},
+
+		{
+			"profile": "Barbara te Atualizei",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/taoquei1"
+				},
+				{
+					"social": "Youtube",
+					"link": "https://www.youtube.com/c/Teatualizei"
+				}
+			],
+			"details": "Youtuber de direita"
+		},
+
+		{
+			"profile": "OI Sakura",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/0iSakura"
+				}
+			],
+			"details": "Perfil de direita"
+		},
+
+		{
+			"profile": "Ancapsu",
+			"links": [
+				{
+					"social": "Twitter",
+					"link": "https://twitter.com/ancapsu"
+				},
+				{
+					"social": "Youtube",
+					"link": "https://www.youtube.com/c/VisaoLibertaria"
+				}
+			],
+			"details": "Youtuber libertário (pode seguir, é mais de direita do que muitos por aí)"
+		}
+
+	]
+}

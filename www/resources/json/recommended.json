@@ -1,0 +1,79 @@
+{
+	"status" : true,
+	"message" : "Success",
+	"data" : [
+		
+		{
+			"type": "Notícias",
+			"title": {
+				"title": "Terra Notícias",
+				"link": "https://terrabrasilnoticias.com/"
+			},
+			"description": "Mídia até o momento isenta ou mais para direita"
+		},
+
+		{
+			"type": "Meio de pagamento",
+			"title": {
+				"title": "Mercado Pago",
+				"link": "https://www.mercadopago.com.br/"
+			},
+			"description": "Alternativa ao PagSeguro da UOL e ao Paypal."
+		},
+
+		{
+			"type": "Blog",
+			"title": {
+				"title": "Mirror XYZ",
+				"link": "https://mirror.xyz/"
+			},
+			"description": "Blog descentralizado, nenhum governo pode derrubar o que você pensa!"
+		},
+
+		{
+			"type": "Loja",
+			"title": {
+				"title": "Chip Art",
+				"link": "https://www.chipart.com.br/"
+			},
+			"description": "Já demonstraram seu apoio a direita."
+		},
+
+		{
+			"type": "Notícias",
+			"title": {
+				"title": "Poder 360",
+				"link": "https://www.poder360.com.br/"
+			},
+			"description": "Mídia até o momento isenta ou mais para direita"
+		},
+
+		{
+			"type": "Notícias",
+			"title": {
+				"title": "Jovem Pan",
+				"link": "https://jovempan.com.br/"
+			},
+			"description": "Mídia até o momento isenta ou mais para direita"
+		},
+
+		{
+			"type": "Loja",
+			"title": {
+				"title": "Havan",
+				"link": "https://www.havan.com.br"
+			},
+			"description": "Apoio a direita."
+		},
+
+		{
+			"type": "Blog",
+			"title": {
+				"title": "Twitter",
+				"link": "https://twitter.com"
+			},
+			"description": "Agora com liberdade de expressão"
+		}
+
+	]
+}

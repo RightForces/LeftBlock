@@ -9,6 +9,25 @@ Caso seja desenvolvedor pode ajudar a crescer o projeto, embora minha ideia é d
 
 Não conto com servidores no momento, todas listas e sites confiáveis ou não estão locais nesse projeto. Você pode contribuir enviando por e-mail para mim, ou fazendo uma pull-request aqui mesmo.
 
+## Como Instalar
+[Tutorial Youtube](https://www.youtube.com/watch?v=eA7KEgD_JX4)
+ou
+[Tutorial Odysee](https://odysee.com/@RightForces:c/LeftBlock-Installl:6)
+
+## Uma visão política do projeto
+[Tutorial Youtube](https://www.youtube.com/watch?v=GbjbnXYmw4o)
+ou
+[Tutorial Odysee](https://odysee.com/@RightForces:c/LeftBlock-vision:3)
+
+## Quero ajudar no projeto com código ou conteúdo
+[Tutorial Youtube](https://www.youtube.com/watch?v=_xWQ4eggvQk)
+ou
+[Tutorial Odysee](https://odysee.com/@RightForces:c/LeftBlock-developer:9)
+
+## Quero ajudar com Cripto
+Ajude com BTC: bc1q552qhtnyjsfnd0a8wnz3glzguacszp64d3gsqq
+Ajude com BNB Smart Chain: 0x91E10270e2d0C3Ad0E0464d4490dD826546B97a6
+
 ## Como adicionar sites não confiáveis
 
 Adicione os sites que deseja localmente, altere o arquivo manifest.json, procure a marcação "// Insert links here!" e insira após o último site, siga o padrão dos asteriscos ex. "https://*.novosite.com.br/*" assim você garante pegar qualquer página ou subdomínio.
@@ -71,7 +90,6 @@ Adicione os sites que deseja localmente, altere o arquivo www/resources/json/rec
 
 - [@RightForces](https://www.github.com/RightForces)
 - Programador de Direita!
-
 
 ## Etiquetas
 

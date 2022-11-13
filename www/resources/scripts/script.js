@@ -2,8 +2,8 @@
 
 const config = {
   LINK_MOCK: "https://636a4a55b10125b78fd69372.mockapi.io/api/version",
-  CURRENT_VERSION_NAME: "0.0.1",
-  CURRENT_VERSION: 1
+	CURRENT_VERSION_NAME: "0.0.1",
+	CURRENT_VERSION: 1
 }
 
 async function initAction() {
@@ -46,18 +46,18 @@ $(document).ready( function () {
 
 		var nameVersionElement = document.getElementById("nameVersion");
 		$.ajax({url: config.LINK_MOCK, success: function(result){
-	    	if(parseInt(result.version) > parseInt(config.CURRENT_VERSION)) {
-	    		alert("Existe uma versão atualizada, é altamente recomendado o update.");
-					window.open(result.link, '_blank');
-					if(nameVersionElement != null) {
-						nameVersion.innerHTML = config.CURRENT_VERSION_NAME + " <span style='color:red'>está desatualizada!.</span>";
-					}
-	    	} else {
-					if(nameVersionElement != null) {
-						nameVersion.innerHTML = config.CURRENT_VERSION_NAME + " <span style='color:green'>está atualizado.</span>";
-					}
-	    	}
-	  	}});
+			if(parseInt(result.version) > parseInt(config.CURRENT_VERSION)) {
+				alert("Existe uma versão atualizada, é altamente recomendado o update.");
+				window.open(result.link, '_blank');
+				if(nameVersionElement != null) {
+					nameVersion.innerHTML = config.CURRENT_VERSION_NAME + " <span style='color:red'>está desatualizada!.</span>";
+				}
+			} else {
+				if(nameVersionElement != null) {
+					nameVersion.innerHTML = config.CURRENT_VERSION_NAME + " <span style='color:green'>está atualizado.</span>";
+				}
+			}
+		}});
 
 	}
 
@@ -69,129 +69,186 @@ $(document).ready( function () {
 		var iconLoja = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/><path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/></svg>';
 
 		$.getJSON("resources/json/recommended.json", 
-		    function (response) {
+			function (response) {
 
-			    var recommended = '';
-			    $.each(response.data, function (key, value) {
+				var recommended = '';
+				$.each(response.data, function (key, value) {
 
-			        recommended += '<tr>';
+					recommended += '<tr>';
 
-			        var type = ""
+					var type = ""
 
-			        switch(value.type) {
-			        	case "Notícias":
-			        		type = iconNews + " " + value.type; 
-			        		break;
-			        	case "Meio de pagamento":
-			        		type = iconPayment + " " + value.type;
-			        		break;
-			        	case "Blog":
-			        		type = iconBlog + " " + value.type;
-			        		break;
-			        	case "Loja":
-			        		type = iconLoja + " " + value.type;
-			        		break;
-			        	default:
-			        		break;
-			        }
+					switch(value.type) {
+					case "Notícias":
+						type = iconNews + " " + value.type; 
+						break;
+					case "Meio de pagamento":
+						type = iconPayment + " " + value.type;
+						break;
+					case "Blog":
+						type = iconBlog + " " + value.type;
+						break;
+					case "Loja":
+						type = iconLoja + " " + value.type;
+						break;
+					default:
+						break;
+					}
 
-			        recommended += '<td>' + type + '</td>';
+					recommended += '<td>' + type + '</td>';
 
-			        recommended += '<td><a target="_blank" href="'+value.title.link+'">'+value.title.title+'</a></td>';
+					recommended += '<td><a target="_blank" href="'+value.title.link+'">'+value.title.title+'</a></td>';
 
-			        recommended += '<td>' + value.description + '</td>';
+					recommended += '<td>' + value.description + '</td>';
 
-			        recommended += '</tr>';
-			    });
-		      
-		    	$('#listRecommended').append(recommended);
-		    	$('#listRecommended').DataTable({
-			        "language": {
-			            "url": "resources/json/dataTable.pt-BR.json"
-			        }
-			    });
+					recommended += '</tr>';
+				});
+
+				$('#listRecommended').append(recommended);
+				$('#listRecommended').DataTable({
+					"language": {
+						"url": "resources/json/dataTable.pt-BR.json"
+					}
+				});
 			}
-		).fail(function(jqXHR, textStatus, errorThrown) {
-	        console.log("error " + textStatus);
-	    });
-	}
+			).fail(function(jqXHR, textStatus, errorThrown) {
+				console.log("error " + textStatus);
+			});
+		}
 
-	function listNotRecommended() {
-		$.getJSON("resources/json/not_recommended.json", 
-		    function (response) {
+		function listNotRecommended() {
+			$.getJSON("resources/json/not_recommended.json", 
+				function (response) {
 
-			    var recommended = '';
-			    $.each(response.data, function (key, value) {
+					var recommended = '';
+					$.each(response.data, function (key, value) {
 
-			        recommended += '<tr>';
+						recommended += '<tr>';
 
-			        recommended += '<td>' + value.name + '</td>';
+						recommended += '<td>' + value.name + '</td>';
 
-			        recommended += '<td>' + value.resume + '</td>';
+						recommended += '<td>' + value.resume + '</td>';
 
-			        recommended += '<td>';
-			        $.each(value.links, function (key, value_) {
-				        recommended += ' | <a target="_blank" href="'+value_.link+'">'+value_.titulo+'</a> |';
-				    });
-			        recommended += '</td>';
+						recommended += '<td>';
+						$.each(value.links, function (key, value_) {
+							recommended += ' | <a target="_blank" href="'+value_.link+'">'+value_.titulo+'</a> |';
+						});
+						recommended += '</td>';
 
-			        recommended += '</tr>';
-			    });
-		      
-		    	$('#notRecommended').append(recommended);
-		    	$('#notRecommended').DataTable({
-			        "language": {
-			            "url": "resources/json/dataTable.pt-BR.json"
-			        }
-			    });
+						recommended += '</tr>';
+					});
+
+					$('#notRecommended').append(recommended);
+					$('#notRecommended').DataTable({
+						"language": {
+							"url": "resources/json/dataTable.pt-BR.json"
+						}
+					});
+				}
+				).fail(function(jqXHR, textStatus, errorThrown) {
+					console.log("error " + textStatus);
+				});
 			}
-		).fail(function(jqXHR, textStatus, errorThrown) {
-	        console.log("error " + textStatus);
-	    });
-	}
 
-	function listProfiles() {
-		$.getJSON("resources/json/profiles.json", 
-		    function (response) {
+			function listProfiles() {
+				$.getJSON("resources/json/profiles.json", 
+					function (response) {
 
-			    var recommended = '';
-			    $.each(response.data, function (key, value) {
+						var recommended = '';
+						$.each(response.data, function (key, value) {
 
-			        recommended += '<tr>';
+							recommended += '<tr>';
 
-			        recommended += '<td>' + value.profile + '</td>';
+							recommended += '<td>' + value.profile + '</td>';
 
-			        recommended += '<td>';
-			        $.each(value.links, function (key, value_) {
-				        recommended += ' | <a target="_blank" href="'+value_.link+'">'+value_.social+'</a> |';
-				    });
-			        recommended += '</td>';
+							recommended += '<td>';
+							$.each(value.links, function (key, value_) {
+								recommended += ' | <a target="_blank" href="'+value_.link+'">'+value_.social+'</a> |';
+							});
+							recommended += '</td>';
 
-			        recommended += '<td>' + value.details + '</td>';
+							recommended += '<td>' + value.details + '</td>';
 
-			        recommended += '</tr>';
-			    });
-		      
-		    	$('#profiles').append(recommended);
-		    	$('#profiles').DataTable({
-			        "language": {
-			            "url": "resources/json/dataTable.pt-BR.json"
-			        }
-			    });
-			}
-		).fail(function(jqXHR, textStatus, errorThrown) {
-	        console.log("error " + textStatus);
-	    });
-	}
+							recommended += '</tr>';
+						});
 
-	listRecommended();
-	listNotRecommended();		
-	listProfiles();
-	getLastVersion();
+						$('#profiles').append(recommended);
+						$('#profiles').DataTable({
+							"language": {
+								"url": "resources/json/dataTable.pt-BR.json"
+							}
+						});
+					}
+					).fail(function(jqXHR, textStatus, errorThrown) {
+						console.log("error " + textStatus);
+					});
+				}
 
-	$("#nav-placeholder").load("nav.html");
-	console.clear();
-	console.log('%c Nosso código está no Github amigo ;) ', 'background: #222; color: #bada55');
+				function listMap() {
+
+					if(document.getElementById("map")) {
+						let mapOptions = {
+							center:[-13.583171, -52.036867],
+							zoom:4
+						}
+
+						let map = new L.map('map' , mapOptions);
+						map.locate({setView: true, maxZoom: 13});
+
+						map.on('locationfound', function(e) {
+							var radius = e.accuracy;
+
+							L.marker(e.latlng).addTo(map)
+							.bindPopup("Você está aqui (Eu acho)").openPopup();
+
+							L.circle(e.latlng, radius).addTo(map);
+						});
+
+						map.on('locationerror', function() { console.log("Falha ao encontrar localização do usuário."); });
+
+						let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+						map.addLayer(layer);
+
+						$.getJSON("resources/json/stores.json", 
+							function (response) {
+
+								$.each(response.data, function (key, store) {
+
+									let lat = store.lat;
+									let long = store.long;
+
+									let marker = new L.Marker([lat, long],{"title": store.hint});
+									marker
+									.addTo(map)
+									.bindPopup(store.title+'<hr>'+store.description+'<br/><br/><a href="https://www.google.com/maps/@'+lat+','+long+',17z" target="_blank">Ver no Google Maps</a>');
+
+									marker.on('click', function(e){
+										map.setView(e.latlng, 17);
+									});	
+
+									
+								});
+								
+								
+							}
+							).fail(function(jqXHR, textStatus, errorThrown) {
+								console.log("jqXHR " + errorThrown);
+								console.log("error " + textStatus);
+							});
+
+					}
+
+				}
+
+				listRecommended();
+				listNotRecommended();		
+				listProfiles();
+				listMap();
+				getLastVersion();
+
+				$("#nav-placeholder").load("nav.html");
+				console.clear();
+				console.log('%c Nosso código está no Github amigo ;) ', 'background: #222; color: #bada55');
 
 
-});
+			});

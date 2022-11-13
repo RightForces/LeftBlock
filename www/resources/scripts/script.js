@@ -1,7 +1,7 @@
 "use strict";
 
 const config = {
-  LINK_MOCK: "https://636a4a55b10125b78fd69372.mockapi.io/api/version",
+	LINK_MOCK: "https://636a4a55b10125b78fd69372.mockapi.io/version",
 	CURRENT_VERSION_NAME: "0.0.1",
 	CURRENT_VERSION: 1
 }

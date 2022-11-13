@@ -58,7 +58,7 @@ Adicione os sites que deseja localmente, altere o arquivo www/resources/json/rec
 ```
 * profiles.jon (Lista de perfis recomendados, Canais de Youtube, conta no Twitter etc.)
 ```
-//Como adicionar
+//Como adicionar um perfil
 {
 	"profile": "Nome do perfil",
 	"links": [
@@ -82,7 +82,17 @@ Adicione os sites que deseja localmente, altere o arquivo www/resources/json/rec
 	"description": "Uma breve descrição"
 }
 ```
-
+* stores.json (Lista de lojas denunciadas)
+```
+//Como adicionar uma loja
+{
+	"hint": "Título que aparece deixando o mouse por cima",
+	"title": "Parte de cima do texto, antes do traço",
+	"description": "descrição com mais detalhes e link do expose ocorrido, de site, rede social etc.",
+	"lat": -0.0, //Latitude em double, sem aspas
+	"long": -0.0 //Latitude em double, sem aspas
+}
+```
 ## Autores
 
 - [@RightForces](https://www.github.com/RightForces)

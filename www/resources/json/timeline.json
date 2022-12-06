@@ -1,0 +1,81 @@
+{
+	"status" : true,
+	"message" : "Success",
+	"data" : [
+		
+		{
+			"year": "2019",
+			"title": "Iniciativa contra a esquerda",
+			"description": "<p>Com a vitória dá, então, \"direita\" muitos acabaram apenas indo na onda Bolsonaro, o que inevitavelmente levou a uma infeliz ruptura logo no início de seu mandato, fazendo assim que a direita real tivesse um novo inimigo. Os isentões / pseudo-liberais.</p>",
+			"articles": [
+				{
+					"date": "01/01/2019",
+					"title": "Jair Bolsonaro toma posse",
+					"content": "<p>Após a derrota da esquerda, tem início o novo governo!</p>",
+					"img": "https://2.bp.blogspot.com/-ph3kXjC5xho/XCvqr4rD_3I/AAAAAAAAYt8/aqdMd9udg9sG_1wVeIzrobnjH27hnQ9uQCLcBGAs/s1600/bolsonaro-segura-bandeira-do-brasil-apos-receber-a-faixa-pre.jpg",
+					"link": "https://web.archive.org/web/20190102130256/https://www12.senado.leg.br/noticias/materias/2019/01/01/jair-bolsonaro-toma-posse-no-congresso-e-se-torna-38o-presidente-do-brasil"
+				},
+				{
+					"date": "07/09/2019",
+					"title": "G1 ataca criança",
+					"content": "<p>Perfil da Globo no Facebook ofende menino no desfile com Bolsonaro</p>",
+					"img": "https://web.archive.org/web/20201123192628/https://static.poder360.com.br/2019/09/twitterweintraub.png",
+					"link": "https://web.archive.org/web/20201123192628/https://www.poder360.com.br/midia/perfil-da-globo-no-facebook-ofende-menino-no-desfile-com-bolsonaro/"
+				}
+			]
+		},
+
+		{
+			"year": "2020",
+			"title": "Segundo ano de Jair Bolsonaro [Pandemia | Eleições Americanas]",
+			"description": "<p>O vírus da Covid causou uma pandemia global, e expôs o quão autoritário o estado é para garantir aquilo que acredita ser o certo, ou simplesmente para mostrar poder. Bolsonaro foi contra o lockdown e a perda de liberdade dos brasileiros, mas a mídia em peso jogou contra</p><p>Nossa primeira derrota, e uma infeliz previsão do que estava por vir, Donald trump perde as eleições, de uma forma muito estranha.</p>",
+			"articles": [
+				{
+					"date": "07/05/2020",
+					"title": "Gestão ditatorial de João dória e da prefeitura.",
+					"content": "<p>Prefeito de SP manda soldar portas de comércios de São Paulo.</p>",
+					"img": "http://www.e-farsas.com/wp-content/uploads/solda6.jpg",
+					"link": "https://web.archive.org/web/20210311164833/https://gazetabrasil.com.br/brasil/sao-paulo/2020/05/07/prefeito-de-sp-manda-soldar-portas-de-comercios-de-sao-paulo/"
+				}
+			]
+		},
+
+		{
+			"year": "2021",
+			"title": "Terceiro ano de Jair Bolsonaro [Narrativas]",
+			"description": "<p>O campo começa a ser preparado para fechar o cerco contra o presidente.</p>",
+			"articles": [
+				{
+					"date": "21/06/2021",
+					"title": "Barroso se reúne com deputados da comissão do voto impresso",
+					"content": "<p>Após conversa com Barroso, milagrosamente, os votos mudaram...</p>",
+					"img": "https://imagens.ebc.com.br/YZKSJVPb_MfVvbK74mEinf_cE4Y=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/fcpzzb_abr_2111198508.jpg?itok=q_n9lWMd",
+					"link": "https://web.archive.org/web/20210622002930/https://agenciabrasil.ebc.com.br/politica/noticia/2021-06/barroso-se-reune-com-deputados-da-comissao-do-voto-impresso"
+				}
+			]
+		},
+
+		{
+			"year": "2022",
+			"title": "Quarto ano de Jair Bolsonaro [Guerra | Fraude]",
+			"description": "<p>As eleições mais parciais da história do mundo.</p>",
+			"articles": [
+				{
+					"date": "27/10/2022",
+					"title": "O TSE e o “radiolão”: dois pesos e duas medidas",
+					"content": "<p>Uma das vários micro-fraudes que iremos apontar.</p>",
+					"img": "https://media.gazetadopovo.com.br/2022/10/27125507/card-15-960x540.jpg",
+					"link": "https://web.archive.org/web/20221102211054/https://www.gazetadopovo.com.br/opiniao/editoriais/tse-radiolao-criterios-lula-bolsonaro/"
+				},
+				{
+					"date": "14/07/2022",
+					"title": "Não pode usar a bandeira do Brasil.",
+					"content": "<p>Juíza do RS entende que bandeira do Brasil é propaganda eleitoral para “um dos lados”</p>",
+					"img": "https://media.gazetadopovo.com.br/2021/02/19204448/97a7adf0-a384-11e9-b62f-b51e1b0a05c1-wp-960x540.jpg",
+					"link": "https://web.archive.org/web/20221029161950/https://www.gazetadopovo.com.br/eleicoes/2022/juiza-do-rs-entende-que-bandeira-do-brasil-e-propaganda-eleitoral-para-um-dos-lados/"
+				}
+			]
+		}
+
+	]
+}

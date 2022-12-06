@@ -111,144 +111,193 @@ $(document).ready( function () {
 					}
 				});
 			}
-			).fail(function(jqXHR, textStatus, errorThrown) {
-				console.log("error " + textStatus);
-			});
-		}
+		).fail(function(jqXHR, textStatus, errorThrown) {
+			console.log("error " + textStatus);
+		});
+	}
 
-		function listNotRecommended() {
-			$.getJSON("resources/json/not_recommended.json", 
-				function (response) {
+	function listNotRecommended() {
+		$.getJSON("resources/json/not_recommended.json", 
+			function (response) {
 
-					var recommended = '';
-					$.each(response.data, function (key, value) {
+				var recommended = '';
+				$.each(response.data, function (key, value) {
 
-						recommended += '<tr>';
+					recommended += '<tr>';
 
-						recommended += '<td>' + value.name + '</td>';
+					recommended += '<td>' + value.name + '</td>';
 
-						recommended += '<td>' + value.resume + '</td>';
+					recommended += '<td>' + value.resume + '</td>';
 
-						recommended += '<td>';
-						$.each(value.links, function (key, value_) {
-							recommended += ' | <a target="_blank" href="'+value_.link+'">'+value_.titulo+'</a> |';
-						});
-						recommended += '</td>';
-
-						recommended += '</tr>';
+					recommended += '<td>';
+					$.each(value.links, function (key, value_) {
+						recommended += ' | <a target="_blank" href="'+value_.link+'">'+value_.titulo+'</a> |';
 					});
+					recommended += '</td>';
 
-					$('#notRecommended').append(recommended);
-					$('#notRecommended').DataTable({
-						"language": {
-							"url": "resources/json/dataTable.pt-BR.json"
-						}
-					});
-				}
-				).fail(function(jqXHR, textStatus, errorThrown) {
-					console.log("error " + textStatus);
+					recommended += '</tr>';
+				});
+
+				$('#notRecommended').append(recommended);
+				$('#notRecommended').DataTable({
+					"language": {
+						"url": "resources/json/dataTable.pt-BR.json"
+					}
 				});
 			}
+		).fail(function(jqXHR, textStatus, errorThrown) {
+			console.log("error " + textStatus);
+		});
+	}
 
-			function listProfiles() {
-				$.getJSON("resources/json/profiles.json", 
-					function (response) {
+	function listProfiles() {
+		$.getJSON("resources/json/profiles.json", 
+			function (response) {
 
-						var recommended = '';
-						$.each(response.data, function (key, value) {
+				var recommended = '';
+				$.each(response.data, function (key, value) {
 
-							recommended += '<tr>';
+					recommended += '<tr>';
 
-							recommended += '<td>' + value.profile + '</td>';
+					recommended += '<td>' + value.profile + '</td>';
 
-							recommended += '<td>';
-							$.each(value.links, function (key, value_) {
-								recommended += ' | <a target="_blank" href="'+value_.link+'">'+value_.social+'</a> |';
-							});
-							recommended += '</td>';
-
-							recommended += '<td>' + value.details + '</td>';
-
-							recommended += '</tr>';
-						});
-
-						$('#profiles').append(recommended);
-						$('#profiles').DataTable({
-							"language": {
-								"url": "resources/json/dataTable.pt-BR.json"
-							}
-						});
-					}
-					).fail(function(jqXHR, textStatus, errorThrown) {
-						console.log("error " + textStatus);
+					recommended += '<td>';
+					$.each(value.links, function (key, value_) {
+						recommended += ' | <a target="_blank" href="'+value_.link+'">'+value_.social+'</a> |';
 					});
-				}
+					recommended += '</td>';
 
-				function listMap() {
+					recommended += '<td>' + value.details + '</td>';
 
-					if(document.getElementById("map")) {
-						let mapOptions = {
-							center:[-13.583171, -52.036867],
-							zoom:4
-						}
+					recommended += '</tr>';
+				});
 
-						let map = new L.map('map' , mapOptions);
-						map.locate({setView: true, maxZoom: 13});
-
-						map.on('locationfound', function(e) {
-							var radius = e.accuracy;
-
-							L.marker(e.latlng).addTo(map)
-							.bindPopup("Você está aqui (Eu acho)").openPopup();
-
-							L.circle(e.latlng, radius).addTo(map);
-						});
-
-						map.on('locationerror', function() { console.log("Falha ao encontrar localização do usuário."); });
-
-						let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-						map.addLayer(layer);
-
-						$.getJSON("resources/json/stores.json", 
-							function (response) {
-
-								$.each(response.data, function (key, store) {
-
-									let lat = store.lat;
-									let long = store.long;
-
-									let marker = new L.Marker([lat, long],{"title": store.hint});
-									marker
-									.addTo(map)
-									.bindPopup(store.title+'<hr>'+store.description+'<br/><br/><a href="https://www.google.com/maps/@'+lat+','+long+',17z" target="_blank">Ver no Google Maps</a>');
-
-									marker.on('click', function(e){
-										map.setView(e.latlng, 17);
-									});	
-
-									
-								});
-								
-								
-							}
-							).fail(function(jqXHR, textStatus, errorThrown) {
-								console.log("jqXHR " + errorThrown);
-								console.log("error " + textStatus);
-							});
-
+				$('#profiles').append(recommended);
+				$('#profiles').DataTable({
+					"language": {
+						"url": "resources/json/dataTable.pt-BR.json"
 					}
+				});
+			}
+		).fail(function(jqXHR, textStatus, errorThrown) {
+			console.log("error " + textStatus);
+		});
+	}
+
+	function listMap() {
+
+		if(document.getElementById("map")) {
+			let mapOptions = {
+				center:[-13.583171, -52.036867],
+				zoom:4
+			}
+
+			let map = new L.map('map' , mapOptions);
+			map.locate({setView: true, maxZoom: 13});
+
+			map.on('locationfound', function(e) {
+				var radius = e.accuracy;
+
+				L.marker(e.latlng).addTo(map)
+				.bindPopup("Você está aqui (Eu acho)").openPopup();
+
+				L.circle(e.latlng, radius).addTo(map);
+			});
+
+			map.on('locationerror', function() { console.log("Falha ao encontrar localização do usuário."); });
+
+			let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+			map.addLayer(layer);
+
+			$.getJSON("resources/json/stores.json", 
+				function (response) {
+
+					$.each(response.data, function (key, store) {
+
+						let lat = store.lat;
+						let long = store.long;
+
+						let marker = new L.Marker([lat, long],{"title": store.hint});
+						marker
+						.addTo(map)
+						.bindPopup(store.title+'<hr>'+store.description+'<br/><br/><a href="https://www.google.com/maps/@'+lat+','+long+',17z" target="_blank">Ver no Google Maps</a>');
+
+						marker.on('click', function(e){
+							map.setView(e.latlng, 17);
+						});	
+
+
+					});
 
 				}
-
-				listRecommended();
-				listNotRecommended();		
-				listProfiles();
-				listMap();
-				getLastVersion();
-
-				$("#nav-placeholder").load("nav.html");
-				console.clear();
-				console.log('%c Nosso código está no Github amigo ;) ', 'background: #222; color: #bada55');
-
-
+			).fail(function(jqXHR, textStatus, errorThrown) {
+				console.log("jqXHR " + errorThrown);
+				console.log("error " + textStatus);
 			});
+
+		}
+
+	}
+
+
+
+	listRecommended();
+	listNotRecommended();		
+	listProfiles();
+	listMap();
+	getLastVersion();
+
+	$("#nav-placeholder").load("nav.html");
+	console.clear();
+	console.log('%c Nosso código está no Github amigo ;) ', 'background: #222; color: #bada55');
+
+
+});
+
+function listTimeline() {
+	if(document.getElementById("timeline")) {
+		$.getJSON("resources/json/timeline.json", 
+			function (response) {
+				var periods = '';
+				var articles = '';
+				$.each(response.data, function (key, value) {
+
+					var periodId = key + 1;
+
+					periods += '<section class="period-single" period="period'+periodId+'">';
+					periods += '<h4 class="year">'+value.year+'</h4>';
+					periods += '<h2 class="title">'+value.title+'</h2>';
+					periods += value.description;
+					periods += '</section>';
+
+					$.each(value.articles, function (akey, article) {
+
+						articles += '<section class="card-single'+(periodId == 1 && akey == 0 ? ' active' : '')+'" period="period'+periodId+'">';
+						articles += '<h4 class="year">'+article.date+'</h4>';
+						articles += '<h2 class="title">'+article.title+'</h2>';
+						articles += '<div class="content">';
+						articles += '<p>'+article.content+'</p>';
+						if(article.img != "") {
+							articles += '<img src="'+article.img+'"/>';
+						}
+						if(article.link != "") {
+							articles += '<a href="'+article.link+'" target="_blank">Fonte</a>';
+						}
+						articles += '</div>';
+						articles += '</section>';
+
+					});
+					
+				});
+
+				$('.periods-container').append(periods);
+				$('.cards-container').append(articles);
+				
+			}
+		).fail(function(jqXHR, textStatus, errorThrown) {
+			console.log("error " + textStatus);
+		});
+	}
+}
+listTimeline();
+

@@ -13,9 +13,45 @@ async function initAction() {
 
 	var googleElement = document.getElementById("google");
 	var hostnameElement = document.getElementById("hostname");
-	if(googleElement && hostnameElement != null){
+	if(googleElement && hostnameElement != null && host != null){
 		google.href = "https://www.google.com.br/search?q="+search; 
 		hostname.textContent = host;
+	} else {
+		var textTop = document.getElementById("text_top");
+		if (textTop != null) { textTop.style.display = "none"; }
+	}
+
+	const $responsiveCarousel = document.querySelector(".js-carousel--simple");
+	 
+	if ($responsiveCarousel != null) {
+
+		new Glider($responsiveCarousel, {
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  draggable: true,
+		  dots: ".js-carousel--simple-dots",
+		  arrows: {
+		    prev: ".js-carousel--simple-prev",
+		    next: ".js-carousel--simple-next",
+		  },
+		  responsive: [
+		    {
+		      breakpoint: 700,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1,
+		      },
+		    },
+		    {
+		      breakpoint: 900,
+		      settings: {
+		        slidesToShow: 2,
+		        slidesToScroll: 2,
+		      },
+		    },
+		  ],
+		});
+
 	}
 
 }
@@ -248,7 +284,7 @@ $(document).ready( function () {
 	getLastVersion();
 
 	$("#nav-placeholder").load("nav.html");
-	console.clear();
+	//console.clear();
 	console.log('%c Nosso código está no Github amigo ;) ', 'background: #222; color: #bada55');
 
 

@@ -282,6 +282,7 @@ $(document).ready( function () {
 	listProfiles();
 	listMap();
 	getLastVersion();
+	setCountDown();
 
 	$("#nav-placeholder").load("nav.html");
 	//console.clear();
@@ -289,6 +290,41 @@ $(document).ready( function () {
 
 
 });
+
+function setCountDown() {
+	
+	if(document.getElementById("countdown")) {
+	  // Define a data final da contagem regressiva
+      var endDate = moment("2026-01-01T00:00:00");
+      
+      // Atualiza o contador a cada segundo
+      setInterval(function() {
+        // Obtém a data atual
+        var currentDate = moment();
+        
+        // Calcula a diferença entre a data final e a data atual
+        var diff = endDate.diff(currentDate);
+        var diffDays = endDate.diff(currentDate, "days");
+        
+        // Calcula o número de anos, meses, dias, horas, minutos e segundos restantes
+        var years = Math.floor(diffDays / 365);
+        var months = moment.duration(diff).months();
+        var days = moment.duration(diff).days();
+        var hours = moment.duration(diff).hours();
+        var minutes = moment.duration(diff).minutes();
+        var seconds = moment.duration(diff).seconds();
+        
+        // Atualiza os valores dos elementos HTML
+        document.getElementById("years").innerHTML = years + " Anos";
+        document.getElementById("months").innerHTML = months + " Meses";
+        document.getElementById("days").innerHTML = days + " Dias";
+        document.getElementById("hours").innerHTML = hours + " Horas";
+        document.getElementById("minutes").innerHTML = minutes + " Minutos";
+        document.getElementById("seconds").innerHTML = seconds + " Segundos";
+      }, 1000);
+	}
+
+}
 
 function listTimeline() {
 	if(document.getElementById("timeline")) {

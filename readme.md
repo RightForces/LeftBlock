@@ -1,6 +1,6 @@
 # Left Block 
 #### Right Forces
-Novo site: https://free.okeezy.com/leftblock/index.html
+[Quero ver o conteúdo](https://rightforces.github.io/LeftBlock/www)
 
 Olá, ajude a divulgar nossa ideia. Vamos mudar hábitos e deixar de consumir conteúdo de sites duvidosos ou declaradamente de esquerda, vamos juntos dar força a iniciativas de direita e libertárias.
 
